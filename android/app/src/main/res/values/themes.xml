@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.NightLight" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">@color/nightlight_magenta</item>
+        <item name="colorOnPrimary">@color/nightlight_navy_deep</item>
+        <item name="colorPrimaryContainer">@color/nightlight_navy_soft</item>
+        <item name="colorOnPrimaryContainer">@color/nightlight_cream</item>
+        <item name="colorSecondary">@color/nightlight_magenta</item>
+        <item name="colorOnSecondary">@color/nightlight_navy_deep</item>
+        <item name="colorSurface">@color/nightlight_navy</item>
+        <item name="colorOnSurface">@color/nightlight_cream</item>
+        <item name="colorSurfaceVariant">@color/nightlight_navy_card</item>
+        <item name="colorOnSurfaceVariant">@color/nightlight_cream_dim</item>
+        <item name="colorOutline">@color/nightlight_navy_soft</item>
+        <item name="android:colorBackground">@color/nightlight_navy_deep</item>
+        <item name="colorOnBackground">@color/nightlight_cream</item>
+        <item name="colorError">@color/nightlight_error</item>
+
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@color/nightlight_navy</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="27">false</item>
+        <item name="android:windowBackground">@color/nightlight_navy_deep</item>
+        <item name="android:forceDarkAllowed" tools:targetApi="29">false</item>
+    </style>
+
+    <style name="Theme.NightLight.Splash" parent="Theme.NightLight">
+        <item name="android:windowBackground">@color/nightlight_navy_deep</item>
+    </style>
+</resources>

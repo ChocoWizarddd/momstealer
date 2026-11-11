@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.nightlight.app",
+      "sha256_cert_fingerprints": [
+        "33:7B:AA:28:2F:C3:F4:88:B6:DA:B9:6D:D5:91:AA:B3:B0:5F:43:7F:39:07:C2:55:A7:75:F3:57:81:3F:42:11"
+      ]
+    }
+  }
+]

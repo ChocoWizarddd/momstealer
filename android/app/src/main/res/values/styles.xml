@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="NightLightNavIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@android:color/transparent</item>
+    </style>
+
+    <style name="NightLightSectionTitle" parent="TextAppearance.Material3.TitleMedium">
+        <item name="android:textColor">@color/nightlight_cream</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:letterSpacing">-0.01</item>
+    </style>
+
+    <style name="NightLightSearchField" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/nightlight_navy_soft</item>
+        <item name="hintTextColor">@color/nightlight_cream_dim</item>
+    </style>
+
+    <style name="NightLightCardTitle">
+        <item name="android:textColor">@color/nightlight_cream</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="NightLightCardSubtitle">
+        <item name="android:textColor">@color/nightlight_cream_dim</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+</resources>

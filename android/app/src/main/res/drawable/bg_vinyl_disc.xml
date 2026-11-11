@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Vinyl record disc for the Now Playing disk stage (NightLight theme).
+     Concentric groove rings in near-black with faint lavender strokes; the center
+     is left to the artwork label + spindle dot layered on top in XML. -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Outer disc -->
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="#0E0E14" />
+            <stroke
+                android:width="1dp"
+                android:color="#3D3D4D" />
+            <size
+                android:width="280dp"
+                android:height="280dp" />
+        </shape>
+    </item>
+    <!-- Groove rings -->
+    <item
+        android:left="18dp"
+        android:top="18dp"
+        android:right="18dp"
+        android:bottom="18dp">
+        <shape android:shape="oval">
+            <solid android:color="#12121A" />
+            <stroke
+                android:width="1dp"
+                android:color="#232330" />
+        </shape>
+    </item>
+    <item
+        android:left="36dp"
+        android:top="36dp"
+        android:right="36dp"
+        android:bottom="36dp">
+        <shape android:shape="oval">
+            <solid android:color="#0E0E14" />
+            <stroke
+                android:width="1dp"
+                android:color="#262633" />
+        </shape>
+    </item>
+    <item
+        android:left="54dp"
+        android:top="54dp"
+        android:right="54dp"
+        android:bottom="54dp">
+        <shape android:shape="oval">
+            <solid android:color="#12121A" />
+            <stroke
+                android:width="1dp"
+                android:color="#232330" />
+        </shape>
+    </item>
+    <item
+        android:left="72dp"
+        android:top="72dp"
+        android:right="72dp"
+        android:bottom="72dp">
+        <shape android:shape="oval">
+            <solid android:color="#0E0E14" />
+            <stroke
+                android:width="1dp"
+                android:color="#2A2A3A" />
+        </shape>
+    </item>
+    <!-- Faint lavender sheen ring (theme accent, visible while spinning) -->
+    <item
+        android:left="90dp"
+        android:top="90dp"
+        android:right="90dp"
+        android:bottom="90dp">
+        <shape android:shape="oval">
+            <solid android:color="#101018" />
+            <stroke
+                android:width="1dp"
+                android:color="#40C9B8E8" />
+        </shape>
+    </item>
+    <!-- Label bed under the artwork -->
+    <item
+        android:left="106dp"
+        android:top="106dp"
+        android:right="106dp"
+        android:bottom="106dp">
+        <shape android:shape="oval">
+            <solid android:color="#1A1626" />
+            <stroke
+                android:width="1dp"
+                android:color="#55C9B8E8" />
+        </shape>
+    </item>
+</layer-list>

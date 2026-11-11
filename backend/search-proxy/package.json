@@ -1,0 +1,19 @@
+{
+  "name": "nightlight-search-proxy",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Mumbai-egress forwarder for JioSaavn SEARCH calls only. JioSaavn ranks by server IP geo; US egress omits global hits. This function runs in Vercel bom1 (Mumbai) so recall matches Indian users. No secrets inside; gated by FORWARD_SECRET. Zero runtime dependencies.",
+  "scripts": {
+    "test": "node --test test/forward.test.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "engines": {
+    "node": "22.x"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@vercel/node": "^5.10.2",
+    "typescript": "^5.8.0"
+  }
+}

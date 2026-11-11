@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+    <background android:drawable="@color/nightlight_navy_deep" />
+    <foreground>
+        <inset
+            android:drawable="@drawable/nightlight_logo_fg"
+            android:inset="20dp" />
+    </foreground>
+</adaptive-icon>

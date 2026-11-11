@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/recent_card"
+    android:layout_width="136dp"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground"
+    android:orientation="vertical"
+    android:padding="4dp">
+
+    <ImageView
+        android:id="@+id/recent_artwork"
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        android:background="@drawable/bg_artwork_placeholder"
+        android:clipToOutline="true"
+        android:contentDescription="@string/artwork_desc"
+        android:scaleType="centerCrop" />
+
+    <TextView
+        android:id="@+id/recent_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/nightlight_cream"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/recent_artist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:textColor="@color/nightlight_cream_dim"
+        android:textSize="10sp" />
+</LinearLayout>

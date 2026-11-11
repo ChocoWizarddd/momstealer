@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Deep charcoal player backdrop; artwork atmosphere is supplied dynamically. -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Base vertical sweep: deep purple -> black plum -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="270"
+                android:startColor="#242424"
+                android:centerColor="#181818"
+                android:endColor="#121212" />
+        </shape>
+    </item>
+    <!-- Upper atmosphere: magenta glow that dies before mid-screen -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="270"
+                android:startColor="#2462D35B"
+                android:centerColor="#0C62D35B"
+                android:endColor="#00121212" />
+        </shape>
+    </item>
+    <!-- Soft vignette from the edges -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="0"
+                android:startColor="#40121212"
+                android:centerColor="#00121212"
+                android:endColor="#40121212" />
+        </shape>
+    </item>
+</layer-list>

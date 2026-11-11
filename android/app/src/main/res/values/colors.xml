@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- NightLight charcoal surfaces: a restrained, original dark identity. -->
+    <color name="nightlight_ambient_a">#242424</color>
+    <color name="nightlight_ambient_b">#181818</color>
+    <color name="nightlight_navy_deep">#121212</color>
+    <color name="nightlight_navy">#181818</color>
+    <color name="nightlight_navy_soft">#282828</color>
+    <color name="nightlight_navy_card">#202020</color>
+
+    <!-- Supporting accents -->
+    <color name="nightlight_midnight">#121212</color>
+    <color name="nightlight_blue_deep">#183A25</color>
+    <color name="nightlight_blue">#72D66B</color>
+    <color name="nightlight_blue_glow">#55BC53</color>
+    <color name="nightlight_cyan">#77D975</color>
+    <color name="nightlight_cyan_dim">#55BC53</color>
+    <color name="nightlight_indigo">#88D987</color>
+    <color name="nightlight_violet">#91D995</color>
+
+    <!-- NightLight leaf accent -->
+    <color name="nightlight_purple_deep">#17271A</color>
+    <color name="nightlight_purple">#24552D</color>
+    <color name="nightlight_magenta">#62D35B</color>
+    <color name="nightlight_magenta_bright">#83E27B</color>
+    <color name="nightlight_lavender">#C9D8C8</color>
+
+    <!-- Neutral text and controls -->
+    <color name="nightlight_cream">#F5F5F5</color>
+    <color name="nightlight_cream_dim">#B3B3B3</color>
+    <color name="nightlight_gold">#62D35B</color>
+    <color name="nightlight_muted">#777777</color>
+    <color name="nightlight_gold_dim">#48A943</color>
+    <color name="nightlight_ivory">#FFFFFF</color>
+
+    <!-- Translucent glass helpers -->
+    <color name="glass_panel">#E6181818</color>
+    <color name="glass_panel_soft">#66202020</color>
+    <color name="glass_stroke">#1AFFFFFF</color>
+    <color name="glass_highlight">#14FFFFFF</color>
+    <color name="scrim_bottom">#CC121212</color>
+
+    <!-- Stars / supporting -->
+    <color name="nightlight_star">#B3B3B3</color>
+    <color name="nightlight_error">#E76F51</color>
+    <color name="nightlight_success">#7BD389</color>
+
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="transparent">#00000000</color>
+</resources>

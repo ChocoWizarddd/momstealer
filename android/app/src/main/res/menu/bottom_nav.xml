@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Bottom navigation: Home / Search / Library only. Account lives in
+     Settings → Account (dedicated AccountActivity), never in this bar. -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/ic_home"
+        android:title="@string/nav_home" />
+    <item
+        android:id="@+id/nav_search"
+        android:icon="@drawable/ic_search"
+        android:title="@string/nav_search" />
+    <item
+        android:id="@+id/nav_library"
+        android:icon="@drawable/ic_library_music"
+        android:title="@string/nav_library" />
+</menu>

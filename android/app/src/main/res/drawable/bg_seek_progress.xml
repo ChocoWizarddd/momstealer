@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- High-contrast seek track with a restrained NightLight accent. -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@android:id/background"
+        android:top="17dp"
+        android:bottom="17dp">
+        <shape android:shape="rectangle">
+            <corners android:radius="3dp" />
+            <solid android:color="#66FFFFFF" />
+        </shape>
+    </item>
+
+    <item
+        android:id="@android:id/secondaryProgress"
+        android:top="17dp"
+        android:bottom="17dp">
+        <shape android:shape="rectangle">
+            <corners android:radius="3dp" />
+            <solid android:color="#44FFFFFF" />
+        </shape>
+    </item>
+
+    <item
+        android:id="@android:id/progress"
+        android:top="17dp"
+        android:bottom="17dp">
+        <clip>
+            <shape android:shape="rectangle">
+                <corners android:radius="3dp" />
+                <solid android:color="@color/nightlight_magenta" />
+            </shape>
+        </clip>
+    </item>
+</layer-list>

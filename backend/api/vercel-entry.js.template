@@ -1,0 +1,6 @@
+const http = require('node:http')
+const { default: app } = require('./server.js')
+
+const server = http.createServer(app.fetch)
+
+module.exports = server

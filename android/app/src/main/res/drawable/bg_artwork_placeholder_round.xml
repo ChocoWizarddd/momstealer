@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Rounded placeholder used while artwork loads / on error. -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="24dp" />
+            <solid android:color="@color/nightlight_navy_soft" />
+        </shape>
+    </item>
+    <item
+        android:width="56dp"
+        android:height="56dp"
+        android:drawable="@drawable/ic_music_note"
+        android:gravity="center" />
+</layer-list>

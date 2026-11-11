@@ -1,0 +1,38 @@
+# ---- Android / Gradle ----
+.gradle/
+build/
+*/build/
+android/build/
+android/app/build/
+android/.gradle/
+android/local.properties
+*.apk
+*.aab
+*.keystore
+*.jks
+
+# IDE
+.idea/
+*.iml
+.vscode/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# ---- Backend (monorepo: backend/api, backend/spotify-lyrics) ----
+node_modules/
+backend/api/node_modules/
+backend/api/dist/
+backend/spotify-lyrics/vendor/
+
+# Secrets — never commit credentials
+.env
+.env.*
+!.env.example
+backend/api/.env
+**/atlas-credentials*
+*.pem
+# Tooling / editor workspace
+.freebuff/

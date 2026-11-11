@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/nightlight_navy"
+    android:orientation="vertical"
+    android:paddingTop="12dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="20dp"
+        android:paddingBottom="8dp"
+        android:text="@string/action_add_to_playlist"
+        android:textColor="@color/nightlight_cream"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/add_to_playlist_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxHeight="320dp"
+        android:scrollbars="none" />
+
+    <TextView
+        android:id="@+id/add_to_playlist_new"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:background="?attr/selectableItemBackground"
+        android:gravity="center_vertical"
+        android:paddingStart="20dp"
+        android:text="@string/action_new_playlist"
+        android:textColor="@color/nightlight_gold"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+</LinearLayout>

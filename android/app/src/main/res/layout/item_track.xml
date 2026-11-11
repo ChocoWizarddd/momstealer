@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/track_row"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground"
+    android:gravity="center_vertical"
+    android:minHeight="62dp"
+    android:orientation="horizontal"
+    android:paddingStart="16dp"
+    android:paddingTop="5dp"
+    android:paddingEnd="8dp"
+    android:paddingBottom="5dp">
+
+    <ImageView
+        android:id="@+id/track_artwork"
+        android:layout_width="@dimen/row_artwork"
+        android:layout_height="@dimen/row_artwork"
+        android:background="@drawable/bg_artwork_placeholder"
+        android:clipToOutline="true"
+        android:contentDescription="@string/artwork_desc"
+        android:scaleType="centerCrop" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/track_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/nightlight_cream"
+            android:textSize="@dimen/track_title" />
+
+        <TextView
+            android:id="@+id/track_artists"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/nightlight_cream_dim"
+            android:textSize="@dimen/track_subtitle" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/track_duration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:textColor="@color/nightlight_cream_dim"
+        android:textSize="12sp" />
+
+    <ImageButton
+        android:id="@+id/track_like"
+        android:layout_width="34dp"
+        android:layout_height="36dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/action_like"
+        android:src="@drawable/ic_favorite_border"
+        app:tint="@color/nightlight_gold" />
+
+    <ImageButton
+        android:id="@+id/track_more"
+        android:layout_width="34dp"
+        android:layout_height="36dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/cd_more"
+        android:src="@drawable/ic_more_vert"
+        app:tint="@color/nightlight_cream_dim" />
+</LinearLayout>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Mood chip (selected): original NightLight green accent. -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:bottom="2dp"
+        android:left="2dp"
+        android:right="2dp"
+        android:top="2dp">
+        <shape android:shape="rectangle">
+            <corners android:radius="100dp" />
+            <gradient
+                android:angle="0"
+                android:startColor="#62D35B"
+                android:centerColor="#55BC53"
+                android:endColor="#48A943" />
+            <stroke
+                android:width="1dp"
+                android:color="#6683E27B" />
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="100dp" />
+            <gradient
+                android:angle="270"
+                android:startColor="#5CFFFFFF"
+                android:centerColor="#0DFFFFFF"
+                android:endColor="#00FFFFFF" />
+        </shape>
+    </item>
+</layer-list>

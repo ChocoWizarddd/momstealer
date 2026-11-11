@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Home backdrop: restrained charcoal gradient with a subtle green lift. -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="270"
+                android:startColor="#252525"
+                android:centerColor="#181818"
+                android:endColor="#121212" />
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="270"
+                android:startColor="#2862D35B"
+                android:centerColor="#0862D35B"
+                android:endColor="#00121212" />
+        </shape>
+    </item>
+</layer-list>

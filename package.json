@@ -1,0 +1,11 @@
+{
+  "name": "nightlight",
+  "private": true,
+  "description": "NightLight monorepo — Android app (android/) + backends (backend/). Hook entrypoint delegates to backend/api.",
+  "scripts": {
+    "lint": "cd backend/api && bun run lint",
+    "format": "cd backend/api && bun run format",
+    "test": "cd backend/api && bun run test",
+    "commitlint": "cd backend/api && node_modules/.bin/commitlint"
+  }
+}

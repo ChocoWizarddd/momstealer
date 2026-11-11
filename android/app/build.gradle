@@ -1,0 +1,130 @@
+plugins {
+    id 'com.android.application'
+}
+
+// Optional override for ADB testing against a physical device on the LAN:
+//   ./gradlew assembleDebug -PnightlightApiUrl=http://192.168.1.50:8787/api/
+def nightlightApiUrl = project.hasProperty('nightlightApiUrl')
+        ? project.property('nightlightApiUrl')
+        : 'https://nightlight-api.onrender.com/api/'
+
+android {
+    namespace 'com.nightlight.app'
+    compileSdk 34
+
+    def releaseStoreFile = rootProject.file('nightlight-release.keystore')
+    def releaseStorePass = project.hasProperty('NIGHTLIGHT_STORE_PASSWORD')
+            ? project.property('NIGHTLIGHT_STORE_PASSWORD') : System.getenv('NIGHTLIGHT_STORE_PASSWORD')
+    def releaseKeyPass = project.hasProperty('NIGHTLIGHT_KEY_PASSWORD')
+            ? project.property('NIGHTLIGHT_KEY_PASSWORD') : System.getenv('NIGHTLIGHT_KEY_PASSWORD')
+    def releaseSigningReady = releaseStoreFile.exists()
+            && releaseStorePass != null && !releaseStorePass.isEmpty()
+            && releaseKeyPass != null && !releaseKeyPass.isEmpty()
+
+    // Firebase Web API key + Google OAuth Web client ID are public identifiers
+    // (same class as the API base URL). Override via -PnightlightFirebaseKey=...
+    // / -PnightlightGoogleClientId=... or FIREBASE_WEB_API_KEY / GOOGLE_WEB_CLIENT_ID env.
+    // Empty (default) => sign-in reports "not configured in this build yet" on device.
+    def fbKey = project.hasProperty('nightlightFirebaseKey') ? nightlightFirebaseKey : (System.getenv('FIREBASE_WEB_API_KEY') ?: '')
+    def gClientId = project.hasProperty('nightlightGoogleClientId') ? nightlightGoogleClientId : (System.getenv('GOOGLE_WEB_CLIENT_ID') ?: '')
+
+    signingConfigs {
+        // Credentials MUST come from Gradle properties or environment variables.
+        // Never commit signing passwords/default credentials to source.
+        release {
+            storeFile releaseStoreFile
+            storePassword releaseStorePass ?: ''
+            keyAlias 'nightlight'
+            keyPassword releaseKeyPass ?: ''
+        }
+    }
+
+    defaultConfig {
+        applicationId 'com.nightlight.app'
+        minSdk 26
+        targetSdk 34
+        versionCode 1
+        versionName '1.0.0'
+        buildConfigField 'String', 'FIREBASE_API_KEY', "\"${fbKey}\""
+        buildConfigField 'String', 'GOOGLE_WEB_CLIENT_ID', "\"${gClientId}\""
+    }
+
+    buildTypes {
+        debug {
+            // Emulator reaches the host machine via 10.0.2.2.
+            buildConfigField 'String', 'API_BASE_URL', "\"${nightlightApiUrl}\""
+        }
+        release {
+            if (releaseSigningReady) {
+                signingConfig signingConfigs.release
+            } else {
+                logger.warn("NightLight release APK will be unsigned: provide NIGHTLIGHT_STORE_PASSWORD and NIGHTLIGHT_KEY_PASSWORD and a valid nightlight-release.keystore to sign it.")
+            }
+            if ((fbKey == null || fbKey.isEmpty()) || (gClientId == null || gClientId.isEmpty())) {
+                logger.warn("NightLight release auth NOT configured: pass -PnightlightFirebaseKey=... -PnightlightGoogleClientId=... (or FIREBASE_WEB_API_KEY / GOOGLE_WEB_CLIENT_ID env). Sign-in will report 'not configured in this build yet' on device.")
+            }
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            // Production deployments must point at a real HTTPS host via
+            // -PnightlightApiUrl=https://nightlight-api.onrender.com/api/
+            def prodUrl = project.hasProperty('nightlightApiUrl') ? nightlightApiUrl : 'https://nightlight-api.onrender.com/api/'
+            buildConfigField 'String', 'API_BASE_URL', "\"${prodUrl}\""
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    buildFeatures {
+        buildConfig true
+    }
+}
+
+dependencies {
+    // AndroidX core
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation 'androidx.core:core:1.13.1'
+    implementation 'androidx.activity:activity:1.9.3'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.recyclerview:recyclerview:1.3.2'
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+    implementation 'com.google.android.material:material:1.12.0'
+
+    // MVVM
+    implementation 'androidx.lifecycle:lifecycle-viewmodel:2.8.7'
+    implementation 'androidx.lifecycle:lifecycle-livedata:2.8.7'
+
+    // Local persistence
+    implementation 'androidx.room:room-runtime:2.6.1'
+    annotationProcessor 'androidx.room:room-compiler:2.6.1'
+
+    // Networking
+    implementation 'com.squareup.retrofit2:retrofit:2.11.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.11.0'
+    implementation 'com.squareup.okhttp3:okhttp:4.12.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.12.0'
+
+    // Playback (Media3 / ExoPlayer)
+    implementation 'androidx.media3:media3-exoplayer:1.4.1'
+    implementation 'androidx.media3:media3-session:1.4.1'
+    implementation 'androidx.media3:media3-datasource:1.4.1'
+    implementation 'androidx.media3:media3-ui:1.4.1'
+
+    // Images
+    implementation 'com.github.bumptech.glide:glide:4.16.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.16.0'
+    implementation 'androidx.palette:palette:1.0.0'
+
+    // Secure token storage
+    implementation 'androidx.security:security-crypto:1.1.0-alpha06'
+
+    // Google Sign-In via Credential Manager (ID token for backend exchange)
+    implementation 'androidx.credentials:credentials:1.3.0'
+    implementation 'androidx.credentials:credentials-play-services-auth:1.3.0'
+    implementation 'com.google.android.libraries.identity.googleid:googleid:1.1.1'
+
+    testImplementation 'junit:junit:4.13.2'
+}

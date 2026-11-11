@@ -1,0 +1,18 @@
+# Render Blueprint — NightLight API.
+# Codifies the service so deploys no longer depend on a dashboard
+# "Root Directory" setting (previously jiosaavn-api-0.1.0, now backend/api).
+# If a service was created manually, either point it at this blueprint or
+# update its Root Directory to `backend/api`.
+services:
+  - type: web
+    name: nightlight-api
+    runtime: node
+    rootDir: backend/api
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: '22'
+      # PORT is provided by Render; src/local.ts already honors it.
+      # Set MONGODB_URI / JWT_SECRET / email keys in the dashboard (secret).

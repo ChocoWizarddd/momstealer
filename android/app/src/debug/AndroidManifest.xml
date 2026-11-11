@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Local development only: the emulator talks to the host backend over
+         plain HTTP (10.0.2.2). Release builds do not allow cleartext. -->
+    <application android:usesCleartextTraffic="true" />
+</manifest>

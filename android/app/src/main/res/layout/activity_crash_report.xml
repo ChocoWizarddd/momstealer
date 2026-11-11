@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/nightlight_midnight"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/crash_title"
+        android:textColor="@color/nightlight_magenta_bright"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="@string/crash_hint"
+        android:textColor="@color/nightlight_cream_dim"
+        android:textSize="13sp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        android:layout_weight="1"
+        android:background="@color/nightlight_navy_card"
+        android:fillViewport="true">
+
+        <TextView
+            android:id="@+id/crash_trace"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:padding="12dp"
+            android:textColor="@color/nightlight_cream"
+            android:textIsSelectable="true"
+            android:textSize="11sp" />
+    </ScrollView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/crash_copy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/crash_copy"
+        android:textColor="@color/nightlight_ivory"
+        app:backgroundTint="@color/nightlight_magenta" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/crash_close"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/crash_close"
+        android:textColor="@color/nightlight_cream"
+        app:backgroundTint="@color/nightlight_navy_soft" />
+</LinearLayout>

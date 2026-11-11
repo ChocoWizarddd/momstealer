@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Gradient scrim: deep at the top, dissolving toward the horizon. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <gradient
+        android:angle="270"
+        android:startColor="#EE121212"
+        android:centerColor="#99181818"
+        android:endColor="#00181818" />
+</shape>

@@ -8,6 +8,7 @@ import { FirebaseAuthService } from './firebase-auth.service'
 // Verification is mocked: unit tests must not hit Google's JWKS. The
 // signature/issuer/audience paths are covered by the end-to-end device test.
 vi.mock('#common/identity/google-token.service', () => ({
+  googleConfigured: vi.fn().mockReturnValue(true),
   verifyGoogleIdToken: vi.fn().mockResolvedValue({
     sub: 'g-sub-1',
     email: 'user@example.com',

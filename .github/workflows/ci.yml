@@ -52,4 +52,5 @@ jobs:
           cache: gradle
 
       - name: Build, test and lint
-        run: ./gradlew assembleDebug test lint --no-daemon
+        # Invoke through Bash because the checked-in wrapper lacks the executable bit.
+        run: bash ./gradlew assembleDebug test lint --no-daemon

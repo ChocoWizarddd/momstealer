@@ -189,11 +189,11 @@ public final class AccountActivity extends AppCompatActivity {
             avatar.setPadding(0, 0, 0, 0);
             avatar.clearColorFilter();
             Glide.with(this).load(photo).circleCrop()
-                    .placeholder(R.drawable.nightlight_logo)
-                    .error(R.drawable.nightlight_logo)
+                    .placeholder(R.drawable.spotx_logo)
+                    .error(R.drawable.spotx_logo)
                     .into(avatar);
         } else {
-            avatar.setImageResource(R.drawable.nightlight_logo);
+            avatar.setImageResource(R.drawable.spotx_logo);
             avatar.setPadding(Math.round(20f * dp), Math.round(20f * dp),
                     Math.round(20f * dp), Math.round(20f * dp));
         }
@@ -216,7 +216,7 @@ public final class AccountActivity extends AppCompatActivity {
 
     private void renderGuestHeader() {
         com.google.android.material.imageview.ShapeableImageView avatar = bigAvatar();
-        avatar.setImageResource(R.drawable.nightlight_logo);
+        avatar.setImageResource(R.drawable.spotx_logo);
         avatar.setPadding(Math.round(20f * dp), Math.round(20f * dp),
                 Math.round(20f * dp), Math.round(20f * dp));
         content.addView(avatar);
@@ -446,11 +446,11 @@ public final class AccountActivity extends AppCompatActivity {
         cover.setClipToOutline(true);
         if (p.artworkUrl != null && !p.artworkUrl.isEmpty()) {
             Glide.with(this).load(p.artworkUrl).centerCrop()
-                    .placeholder(R.drawable.nightlight_logo)
-                    .error(R.drawable.nightlight_logo)
+                    .placeholder(R.drawable.spotx_logo)
+                    .error(R.drawable.spotx_logo)
                     .into(cover);
         } else {
-            cover.setImageResource(R.drawable.nightlight_logo);
+            cover.setImageResource(R.drawable.spotx_logo);
             cover.setPadding(Math.round(12f * dp), Math.round(12f * dp),
                     Math.round(12f * dp), Math.round(12f * dp));
         }
@@ -524,11 +524,11 @@ public final class AccountActivity extends AppCompatActivity {
         art.setClipToOutline(true);
         if (t.imageUrl != null && !t.imageUrl.isEmpty()) {
             Glide.with(this).load(t.imageUrl).centerCrop()
-                    .placeholder(R.drawable.nightlight_logo)
-                    .error(R.drawable.nightlight_logo)
+                    .placeholder(R.drawable.spotx_logo)
+                    .error(R.drawable.spotx_logo)
                     .into(art);
         } else {
-            art.setImageResource(R.drawable.nightlight_logo);
+            art.setImageResource(R.drawable.spotx_logo);
             art.setPadding(Math.round(10f * dp), Math.round(10f * dp),
                     Math.round(10f * dp), Math.round(10f * dp));
         }

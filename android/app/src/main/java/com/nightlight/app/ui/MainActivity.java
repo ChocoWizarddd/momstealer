@@ -217,7 +217,7 @@ public final class MainActivity extends AppCompatActivity {
                 } else {
                     // On Home: show exit confirmation.
                     new androidx.appcompat.app.AlertDialog.Builder(MainActivity.this)
-                            .setTitle("Leave NightLight?")
+                            .setTitle("Leave SpotX?")
                             .setMessage("Do you really want to quit the app?")
                             .setPositiveButton("Quit", (d, w) -> finish())
                             .setNegativeButton("Stay", null)
@@ -376,7 +376,7 @@ public final class MainActivity extends AppCompatActivity {
             return;
         }
         new androidx.appcompat.app.AlertDialog.Builder(this)
-                .setTitle("Leave NightLight?")
+                .setTitle("Leave SpotX?")
                 .setMessage("Do you really want to quit the app? Your music will stop.")
                 .setPositiveButton("Quit", (dialog, which) -> finishAndRemoveTask())
                 .setNegativeButton("Stay", null)

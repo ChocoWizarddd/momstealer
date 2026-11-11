@@ -115,7 +115,7 @@ public final class OnboardingActivity extends AppCompatActivity {
         logoCardLp.bottomMargin = Math.round(18f * getResources().getDisplayMetrics().density);
         logoCard.setLayoutParams(logoCardLp);
         ImageView logo = new ImageView(this);
-        logo.setImageResource(R.drawable.nightlight_logo);
+        logo.setImageResource(R.drawable.spotx_logo);
         logo.setScaleType(ImageView.ScaleType.CENTER_CROP);
         logo.setLayoutParams(new com.google.android.material.card.MaterialCardView.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));

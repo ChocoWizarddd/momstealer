@@ -26,7 +26,7 @@
                 android:alpha="0.0"
                 android:contentDescription="@string/app_name"
                 android:scaleType="centerCrop"
-                android:src="@drawable/nightlight_logo" />
+                android:src="@drawable/spotx_logo" />
         </com.google.android.material.card.MaterialCardView>
 
         <TextView

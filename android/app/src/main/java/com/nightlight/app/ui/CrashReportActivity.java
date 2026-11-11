@@ -62,7 +62,7 @@ public class CrashReportActivity extends AppCompatActivity {
             copy.setOnClickListener(v -> {
                 ClipboardManager cm = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
                 if (cm != null) {
-                    cm.setPrimaryClip(ClipData.newPlainText("NightLight crash report", trace));
+                    cm.setPrimaryClip(ClipData.newPlainText("SpotX crash report", trace));
                     copy.setText(R.string.crash_copied);
                 }
             });

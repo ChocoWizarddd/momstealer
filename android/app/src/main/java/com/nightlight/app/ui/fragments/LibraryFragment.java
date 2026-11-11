@@ -108,10 +108,10 @@ public final class LibraryFragment extends Fragment {
         String avatarUrl = com.nightlight.app.util.AccountPrefs.photoUrl(requireContext());
         if (avatarUrl != null && !avatarUrl.trim().isEmpty()) {
             com.bumptech.glide.Glide.with(this).load(avatarUrl).circleCrop()
-                    .placeholder(R.drawable.nightlight_logo)
-                    .error(R.drawable.nightlight_logo).into(avatar);
+                    .placeholder(R.drawable.spotx_logo)
+                    .error(R.drawable.spotx_logo).into(avatar);
         } else {
-            avatar.setImageResource(R.drawable.nightlight_logo);
+            avatar.setImageResource(R.drawable.spotx_logo);
         }
         avatar.setOnClickListener(v -> startActivity(
                 new android.content.Intent(requireContext(), com.nightlight.app.ui.AccountActivity.class)));

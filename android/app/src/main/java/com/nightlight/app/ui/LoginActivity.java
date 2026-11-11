@@ -122,7 +122,7 @@ public final class LoginActivity extends AppCompatActivity {
         logoCardLp.topMargin = dp(60);
         logoCard.setLayoutParams(logoCardLp);
         lockIcon = new ImageView(this);
-        lockIcon.setImageResource(R.drawable.nightlight_logo);
+        lockIcon.setImageResource(R.drawable.spotx_logo);
         lockIcon.setScaleType(ImageView.ScaleType.CENTER_CROP);
         lockIcon.setLayoutParams(new com.google.android.material.card.MaterialCardView.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
@@ -504,7 +504,7 @@ public final class LoginActivity extends AppCompatActivity {
         // Heading
         if (entry) {
             heading.setText("Millions of Songs.");
-            tagline.setText("Made for you on NightLight.");
+            tagline.setText("Made for you on SpotX.");
             heading.setTextSize(20f);
             heading.setTypeface(Typeface.create("sans-serif", Typeface.BOLD));
             heading.setTextColor(Color.WHITE);

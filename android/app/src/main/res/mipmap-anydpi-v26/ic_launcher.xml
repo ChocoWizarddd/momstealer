@@ -3,7 +3,7 @@
     <background android:drawable="@color/nightlight_navy_deep" />
     <foreground>
         <inset
-            android:drawable="@drawable/nightlight_logo_fg"
+            android:drawable="@drawable/spotx_logo"
             android:inset="20dp" />
     </foreground>
 </adaptive-icon>

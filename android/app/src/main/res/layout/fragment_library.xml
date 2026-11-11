@@ -26,7 +26,7 @@
                 android:layout_marginStart="12dp"
                 android:contentDescription="@string/settings_account"
                 android:scaleType="centerCrop"
-                android:src="@drawable/nightlight_logo" />
+                android:src="@drawable/spotx_logo" />
 
             <TextView
                 android:layout_width="0dp"

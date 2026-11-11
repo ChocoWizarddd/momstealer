@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">NightLight</string>
+    <string name="app_name">SpotX</string>
     <string name="tagline">FEEL IT</string>
 
     <string name="nav_home">Home</string>
@@ -66,7 +66,7 @@
     <string name="action_back">Back</string>
     <string name="action_search">Search</string>
 
-    <string name="crash_title">NightLight crashed</string>
+    <string name="crash_title">SpotX crashed</string>
     <string name="crash_hint">Something went wrong. Please copy this report and send it to the developer — it shows exactly what failed.</string>
     <string name="crash_copy">Copy report</string>
     <string name="crash_copied">Copied ✓</string>
@@ -88,7 +88,7 @@
 
     <string name="settings_title">Settings</string>
     <string name="settings_appearance">Appearance</string>
-    <string name="settings_dark_by_design">NightLight is dark by design — a midnight sky, always.</string>
+    <string name="settings_dark_by_design">SpotX is dark by design — a midnight sky, always.</string>
     <string name="settings_shuffle">Smart Shuffle</string>
     <string name="shuffle_smart">Smart (default)</string>
     <string name="shuffle_smart_desc">Same vibe, varied artists — context-aware queue built from what you play.</string>
@@ -118,10 +118,10 @@
     <string name="listen_join_hint">Enter the 6-letter code</string>
     <string name="listen_starting">Starting session…</string>
     <string name="listen_joined">Joined session %1$s</string>
-    <string name="listen_share_body">Listen with me on NightLight — session code %1$s
+    <string name="listen_share_body">Listen with me on SpotX — session code %1$s
 
 https://nightlight.app/l/%2$s</string>
-    <string name="listen_share_title">Join my NightLight session</string>
+    <string name="listen_share_title">Join my SpotX session</string>
     <string name="listen_code_copied">Code %1$s copied</string>
     <string name="action_share">Share</string>
     <string name="action_join">Join</string>
@@ -131,12 +131,12 @@ https://nightlight.app/l/%2$s</string>
     <string name="settings_licenses">Open-source licenses</string>
     <string name="settings_privacy">Privacy</string>
     <string name="settings_developer">Developer</string>
-    <string name="dev_about">NightLight is built by Sagar Pathak — an Android engineer focused on performance-first, mobile-first music experiences.</string>
+    <string name="dev_about">SpotX is built by Sagar Pathak — an Android engineer focused on performance-first, mobile-first music experiences.</string>
     <string name="dev_linkedin">LinkedIn — @sagarakanoone</string>
     <string name="dev_github">GitHub — @Sagar264offici</string>
     <string name="dev_portfolio">Portfolio — sagar-horizon.vercel.app</string>
     <string name="dev_email">Email — pathaksagar264@gmail.com</string>
-    <string name="settings_privacy_text">NightLight streams music through its own backend and never connects to a database directly from your device. Your likes, playlists and listening history are tied to this device and stored on the NightLight backend. Search queries are sent to the music provider to find tracks.</string>
+    <string name="settings_privacy_text">SpotX streams music through its own backend and never connects to a database directly from your device. Your likes, playlists and listening history are tied to this device and stored on the SpotX backend. Search queries are sent to the music provider to find tracks.</string>
     <string name="settings_sign_out">Sign out of this device</string>
 
     <string name="error_generic">Something went wrong. Try again.</string>
@@ -145,12 +145,12 @@ https://nightlight.app/l/%2$s</string>
     <string name="error_not_found">That doesn’t exist anymore</string>
     <string name="error_rate_limited">Too many requests — wait a moment</string>
     <string name="error_search_unavailable">Search is temporarily unavailable</string>
-    <string name="error_server">NightLight is having trouble — try again soon</string>
+    <string name="error_server">SpotX is having trouble — try again soon</string>
     <string name="error_unauthorized">Session expired — restarting</string>
 
     <string name="toast_like_sync_failed">Couldn’t sync like — will retry later</string>
 
-    <string name="licenses_text">NightLight is built on open-source software:\n\n• AndroidX (Apache 2.0)\n• Media3 / ExoPlayer (Apache 2.0)\n• Retrofit, OkHttp (Apache 2.0)\n• Gson (Apache 2.0)\n• Glide (BSD)\n• Room (Apache 2.0)\n• Material Components (Apache 2.0)\n• Material design icons (Apache 2.0)\n• JioSaavn API (MIT) — unofficial music data proxy\n\nThank you to every maintainer.</string>
+    <string name="licenses_text">SpotX is built on open-source software:\n\n• AndroidX (Apache 2.0)\n• Media3 / ExoPlayer (Apache 2.0)\n• Retrofit, OkHttp (Apache 2.0)\n• Gson (Apache 2.0)\n• Glide (BSD)\n• Room (Apache 2.0)\n• Material Components (Apache 2.0)\n• Material design icons (Apache 2.0)\n• JioSaavn API (MIT) — unofficial music data proxy\n\nThank you to every maintainer.</string>
 
     <string name="cd_play_pause">Play or pause</string>
     <string name="cd_like">Like this track</string>
@@ -172,7 +172,7 @@ https://nightlight.app/l/%2$s</string>
     <string name="import_done">Imported %1$d of %2$d songs</string>
 
     <!-- Auth + onboarding -->
-    <string name="login_title">Welcome to NightLight</string>
+    <string name="login_title">Welcome to SpotX</string>
     <string name="login_subtitle">Sign in with your email to keep your library in sync</string>
     <string name="login_email_hint">you@example.com</string>
     <string name="login_continue">Continue</string>
@@ -226,10 +226,10 @@ https://nightlight.app/l/%2$s</string>
     <string name="settings_account_type_member">Member · synced</string>
     <string name="settings_pill_member">MEMBER</string>
     <string name="settings_pill_guest">GUEST</string>
-    <string name="settings_sign_out_account_confirm">Sign out of NightLight? Your likes and playlists stay saved on this device.</string>
+    <string name="settings_sign_out_account_confirm">Sign out of SpotX? Your likes and playlists stay saved on this device.</string>
 
     <!-- Auth: entry / guest / password flows -->
-    <string name="login_welcome">Welcome to NightLight</string>
+    <string name="login_welcome">Welcome to SpotX</string>
     <string name="login_tagline">Your music, after dark.</string>
     <string name="login_password_hint">Password</string>
     <string name="login_confirm_hint">Confirm password</string>
@@ -259,7 +259,7 @@ https://nightlight.app/l/%2$s</string>
     <string name="login_reset_new_subtitle">Choose a strong new password.</string>
     <string name="login_reset_new_button">Save password</string>
     <string name="login_reset_success">Password updated. Login with your new password.</string>
-    <string name="login_error_server">NightLight is having trouble right now — try again.</string>
+    <string name="login_error_server">SpotX is having trouble right now — try again.</string>
 
     <!-- Guest playlist gating -->
     <string name="guest_sign_in_to_save">Sign in to save playlists</string>

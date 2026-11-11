@@ -1,10 +1,9 @@
 import { randomBytes } from 'node:crypto'
-import process from 'node:process'
 import { collection, Collections } from '#common/database/mongo'
 import { hashToken } from '#common/middleware/auth'
 import { ApiError } from '#common/errors/api-error'
-import { initializeApp, cert } from 'firebase-admin/app'
-import { getAuth } from 'firebase-admin/auth'
+import { firebaseConfigured, verifyFirebaseIdToken } from './firebase.service'
+import { googleConfigured, verifyGoogleIdToken } from '#common/identity/google-token.service'
 
 import {
   isValidUsername,
@@ -16,28 +15,11 @@ import {
 } from './username.service'
 
 /**
- * Initialize Firebase Admin SDK with service account credentials from environment.
- * The service account must have Firebase Auth admin privileges.
- * Set these Render env vars: FIREBASE_PROJECT_ID, FIREBASE_CLIENT_EMAIL, FIREBASE_PRIVATE_KEY
+ * Verify Google Sign-In tokens with Google's public keys and Firebase ID tokens
+ * with Firebase's public keys. Neither flow needs a server-side service-account
+ * private key. Set GOOGLE_WEB_CLIENT_ID and/or FIREBASE_PROJECT_ID to enable
+ * the matching token issuer.
  */
-
-const FIREBASE_PROJECT_ID = process.env.FIREBASE_PROJECT_ID || ''
-const FIREBASE_CLIENT_EMAIL = process.env.FIREBASE_CLIENT_EMAIL || ''
-const FIREBASE_PRIVATE_KEY = process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, '\n') || ''
-
-let firebaseApp: any = null
-
-if (!firebaseApp) {
-  firebaseApp = initializeApp({
-    credential: cert({
-      projectId: FIREBASE_PROJECT_ID,
-      clientEmail: FIREBASE_CLIENT_EMAIL,
-      privateKey: FIREBASE_PRIVATE_KEY
-    })
-  })
-}
-
-const auth = getAuth(firebaseApp)
 
 export interface FirebaseIdentity {
   uid: string
@@ -73,14 +55,27 @@ export class FirebaseAuthService {
     }
 
     let decodedToken: any
-    try {
-      decodedToken = await auth.verifyIdToken(idToken)
-    } catch (error) {
-      console.warn(`[NightLight] Firebase token verification failed: ${error}`)
-      throw new ApiError(401, 'FIREBASE_TOKEN_INVALID', 'Sign-in could not be verified. Please sign in again.')
+    let uid: string
+    if (!googleConfigured() && !firebaseConfigured()) {
+      throw new ApiError(503, 'FIREBASE_AUTH_UNAVAILABLE', 'Authentication is not configured on this deployment.')
     }
 
-    const { uid, email, name, picture } = decodedToken
+    try {
+      const googleIdentity = await verifyGoogleIdToken(idToken)
+      decodedToken = googleIdentity
+      // Keep Google identities namespaced so they cannot collide with Firebase UIDs.
+      uid = `google:${googleIdentity.sub}`
+    } catch (googleError) {
+      try {
+        decodedToken = await verifyFirebaseIdToken(idToken)
+        uid = decodedToken.uid
+      } catch (firebaseError) {
+        console.warn(`[NightLight] Sign-in token verification failed: ${firebaseError ?? googleError}`)
+        throw new ApiError(401, 'FIREBASE_TOKEN_INVALID', 'Sign-in could not be verified. Please sign in again.')
+      }
+    }
+
+    const { email, name, picture } = decodedToken
 
     if (!email) {
       throw new ApiError(401, 'FIREBASE_TOKEN_INVALID', 'Sign-in token missing email.')
